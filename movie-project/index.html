@@ -10,7 +10,7 @@
 <body>
     <!--Cabeçalho-->
     <header>
-        <h1>Search<span>Movie</span></h1>
+        <h1><span>Search</span>Movie</h1>
     </header>
 
     <!--Área de pesquisa-->
@@ -18,7 +18,8 @@
         <div id="search-container">
             <p>
                 <label for="movie-search">Movie Search: </label>
-                <input type="text" name="search" id="movie-search">
+                <span id="inp-txt"><input type="text" name="search" id="id-movie-search"></span>
+                <input type="submit" value="Pesquisar" id="search-movie">
             </p>
         </div>
 
@@ -31,28 +32,24 @@
             <div id="movie-info">
                 <h3 id="movie-title">Guardians of the Galaxy Vol. 2</h3>
                 <div id="generic-info">
-                    <p id="year"><strong>Year:</strong> 2017</p>
-                    <p id="rated"><strong>Rated:</strong> PG-13</p>
-                    <P id="released"><strong>Released:</strong> 05 may 2017</P>
-                    <p id="runtime"><strong>Runtime:</strong> 136min</p>
+                    <p id="year"> <span>Year:</span> 2017</p>
+                    <p id="rated"> <span>Rated:</span> PG-13</p>
+                    <P id="released"> <span>Released:</span> 05 may 2017</P>
+                    <p id="runtime"> <span>Runtime:</span> 136min</p>
                 </div>
-                <p id="genre"><strong>Genre:</strong> Action, Adventure, Comedy</p>
+                <p id="genre"> <span>Genre:</span> Action, Adventure, Comedy</p>
                 <div id="producers">
-                    <p id="director"><strong>Director:</strong> James Gunn</p>
-                    <p id="writer"><strong>Writer:</strong> James Gunn, Dan Abnett, Andy Lanning</p>
-                    <p id="actor"><strong>Actors:</strong> Chris Pratt, Zoe Saldana, Dave Bautista</p>
+                    <p id="director"> <span>Director:</span> James Gunn</p>
+                    <p id="writer"> <span>Writer:</span> James Gunn, Dan Abnett, Andy Lanning</p>
+                    <p id="actor"><span>Actors:</span> Chris Pratt, Zoe Saldana, Dave Bautista</p>
                 </div>
                 <div id="plot">
-                    <p><strong>Plot:</strong> The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord's encounter with his father the ambitious celestial being Ego.</p>
+                    <p> <span>Plot: </span>The Guardians struggle to keep together as a team while dealing with their personal family issues, notably Star-Lord's encounter with his father the ambitious celestial being Ego.</p>
                 </div>
-                <p id="language"><strong>Language:</strong> English</p>
+                <p id="language"><span>Language:</span> English</p>
             </div>
         </div>
     </main>
-
-
-
-
-
+    <script src="js/script.js"></script>
 </body>
 </html>

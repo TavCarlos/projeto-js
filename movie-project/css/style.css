@@ -17,7 +17,7 @@ header{
 }
 
 header > h1 > span{
-    color: rgb(238, 180, 21);
+    color: #eeb415;
 }
 
 
@@ -44,7 +44,7 @@ div#search-container label{
     font-weight: bolder;
 }
 
-div#search-container input{
+span#inp-txt input{
     height: 35px;
     width: 400px;
     border-radius: 25px;
@@ -93,6 +93,11 @@ div#producers{
 
 div#movie-info > p{
     margin: 15px;
+}
+
+div#container span{
+    color: #eeb415;
+    font-weight: bold;
 }
 
 div#plot{
