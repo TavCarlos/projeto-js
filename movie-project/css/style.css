@@ -32,6 +32,7 @@ div#search-container{
     position:relative;
 }
 
+
 div#search-container > p{
     position: absolute;
     top: 50%;
@@ -46,8 +47,15 @@ div#search-container label{
 
 span#inp-txt input{
     height: 35px;
-    width: 400px;
-    border-radius: 25px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+input#search-movie{
+    height: 35px;
+    width: 60px;
+    background-color: #eeb415;
+
 }
 
 /*Corpo Principal*/
