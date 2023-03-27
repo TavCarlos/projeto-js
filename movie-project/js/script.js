@@ -1,5 +1,4 @@
-//const apiKey = 'https://www.omdbapi.com/?s=run&page=1&apikey=618a1d4d'
-//https://www.omdbapi.com/?i=tt1596343&apikey=618a1d4d
+//const apiKey = https://www.omdbapi.com/?t=lord&page=1&apikey=618a1d4d
 
 //DOM
     const movieSearchBox = document.querySelector('#id-movie-search')
