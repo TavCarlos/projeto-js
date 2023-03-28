@@ -1,57 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>SearchMovie</title>
+    <title>Document</title>
 </head>
 <body>
-    <!--Cabeçalho-->
     <header>
-        <h1><span>Search</span>Movie</h1>
+        <h1>Movie<span>Search</span></h1>
     </header>
-
-    <!--Área de pesquisa-->
+    
     <main>
-        
-        <div id="search-container">
-            <p>
-                <label for="movie-search">Movie Search: </label>
-                <span id="inp-txt"><input type="text" name="search" id="movietxt"></span>
-                <input type="submit" value="Search" id="search-movie">
-            </p>
-        </div>
-
-        <div id="teste">
-            
-        </div>
-
         <div id="container">
-            
-                <!--Informação do filme-->
-                <div id="movie-poster">
-                  <span id="poster-img"></span>
-                <div>
-            <div id="movie-info">
-                <h3 id="title"></h3>
-                <div id="generic-info">
-                    <p id="year"></p>
-                    <p id="rated"></p>
-                    <p id="released"></p>
-                   
-                </div>
-                <p id="genre"></p>
-                <div id="producers">
-                    <p id="director"></p>
-                    <p id="writer"></p>
-                    <p id="actor"></p>
-                </div>
-                <div id="plot"></div>
-                <p id="language"></p>
-            </div>
-        </div>
+            <div id="search-container">
+                <input type="text" name="input-txt" id="movietxt">
+                <input type="submit" value="Search" id="search-movie">
+            </div>           
+
+            <div id="result"> </div>
     </main>
     <script src="js/script.js"></script>
 </body>

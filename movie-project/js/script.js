@@ -1,66 +1,60 @@
-//const apiKey = https://www.omdbapi.com/?t=lord&page=1&apikey=618a1d4d;
-
+//DOM
 let Btn = document.querySelector('#search-movie');
 let MovieNameRef = document.querySelector('#movietxt')
 let output = document.querySelector('div#container');
+let result = document.querySelector('div#result');
 
-//DOM - elements
-let erro = document.querySelector('#err');
-
-let poster = document.querySelector('#poster-img');
-let title = document.querySelector('#title');
-let year = document.querySelector('#year');
-let rated = document.querySelector('#rated');
-let released = document.querySelector('#released');
-
-let genre = document.querySelector('#genre');
-let director = document.querySelector('#director');
-let writer = document.querySelector('#writer');
-let actor = document.querySelector('#actor');
-
-let plot = document.querySelector('#plot');
-let language = document.querySelector('#language');
-
-
-//let teste = document.querySelector('#teste') //testando para update
-
-//teste.innerHTML = `<img src="guardian-galaxy.jpg">` //testando para update
 
 //function
 let GetMovie = () =>{
-  //  teste.innerHTML = "" //testando para update
-    let movieName = MovieNameRef.value//MovieNameRef.value
+    let movieName = MovieNameRef.value
     let url = `https://www.omdbapi.com/?t=${movieName}&page=1&apikey=618a1d4d`
 
     if(movieName.length == 0){
-        window.alert(`Filme não encontrado. Por favor, tente novamente!`)
+        result.innerHTML = `<h1 class="movie-not-found">Movie not Found!</h1>`
     } else {
+
+    //buscando dados da API
     fetch(url)
     .then(response => response.json())
         .then(data =>{
-            if(data.Title == undefined){
-                window.alert(`Não foi possivel encontrar: ${movieName}!`);
-            } else{
-                if(data.Poster == 'N/A'){
-                    poster.innerHTML = `<img src="404poster.jpg" alt="movie-poster">`
-                }else{
-                    poster.innerHTML = `<img src="${data.Poster}" alt="movie-poster">`
-                }
-                title.innerHTML = `${data.Title}`
-                year.innerHTML = `<span>Year:</span>${data.Year}`
-                rated.innerHTML = `<span>Rated:</span>${data.Rated}`
-                released.innerHTML = `<span>Released:</span>${data.Released}`
-
-                genre.innerHTML = `<span>Genre:</span>${data.Genre}</p>`
-                director.innerHTML = `<p id="director"> <span>Director:</span>${data.Director}`
-                writer.innerHTML = `<span>Writer:</span>${data.Writer}`
-                actor.innerHTML = `<span>Actors:</span>${data.Actors}`
-
-                plot.innerHTML = `<span>Plot: </span>${data.Plot}`
-                language.innerHTML = `<span>Language:</span>${data.Language}`
-            }
+            if(data.Title == undefined){ //se o dado vir como undefined
+                result.innerHTML = `<h1 class="movie-not-found">Movie not Found!</h1>`
+            }else{
+                result.innerHTML = `
+                <div id="movie-info">
+                    <div id="poster-photo">
+                        <img src="${data.Poster}" onerror="this.src='404poster.jpg'" alt="">
+                    </div>
+                         <div id="details">
+                        <div id="title">
+                            <h3>${data.Title}</h3>
+                        </div>
+                        <span>Year:</span>${data.Year}
+                        <span>Rated:</span>${data.Rated}
+                        <span>Released:</span>${data.Released}
+                        <div id="genre">
+                            <span>Genre: </span>${data.Genre}
+                        </div>
+                        <p><span>Director: </span>${data.Director}</p>
+                        <p><span>Writer: </span>${data.Writer}</p>
+                        <p><span>Actor: </span>${data.Actors}</p>
+                        <div id="plot">
+                            <span>Plot: </span>${data.Plot}
+                        </div>
+                        <span>Language: </span>${data.Language}
+                    </div>
+                </div>`
+            } 
         })
-    }
+        
+    } 
 }
 
 Btn.addEventListener('click', GetMovie)
+//Pesquisando ao pressionar ENTER
+MovieNameRef.addEventListener('keypress', function(e){
+    if (e.keyCode === 13){
+        GetMovie()
+    }
+})
