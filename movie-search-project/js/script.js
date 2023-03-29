@@ -5,7 +5,7 @@ const result = document.querySelector('div#result');
 
 
 //functions
-const GetMovie = (movieName) =>{
+const DisplayMovie = (movieName) =>{
     const url = `https://www.omdbapi.com/?t=${movieName}&page=1&apikey=618a1d4d`
 
     //getting data from API
@@ -58,7 +58,8 @@ const renderMovieInfo = (data, posterUrl) =>{
 Btn.addEventListener('click', () => {
     const movieName = MovieNameRef.value.trim() //remove all blanks in front of or at the end of a string
     if(movieName){
-        GetMovie(movieName)
+        DisplayMovie(movieName)
+        MovieNameRef.value = ""
     } else{
         result.innerHTML = `<h1 class="movie-not-found">Movie name is required!</h1>`
     }
@@ -70,7 +71,8 @@ MovieNameRef.addEventListener('keypress', (e) => {
     if (e.keyCode === 13){
         const movieName = MovieNameRef.value.trim()
         if(movieName){
-            GetMovie(movieName)
+            DisplayMovie(movieName)
+            MovieNameRef.value = "" //Clean input:text after pressing to search
         } else{
             result.innerHTML = `<h1 class="movie-not-found">Movie name is required!</h1>`
         }
