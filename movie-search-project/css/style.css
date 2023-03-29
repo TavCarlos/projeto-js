@@ -66,12 +66,9 @@ h3{
     margin-bottom: 20px;
 }
 
-/*div#details{
-margin: auto;
-}*/
 
 div#genre{
-    margin: 5px 0px 5px 0px;
+    margin: 15px 0px 15px 0px;
 }
 
 span{
@@ -81,7 +78,7 @@ span{
 
 div#plot{
     text-align: justify;
-    margin: 5px 0px 5px 0px;
+    margin: 15px 0px 15px 0px;
 }
 
 .movie-not-found{
